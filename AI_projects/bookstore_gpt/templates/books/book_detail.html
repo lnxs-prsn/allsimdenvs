@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %} {{ book.title }}{% endblock %}
+
+{% block content %}
+    <h1> {{ book.title }} </h1>
+    <p> Author: {{ book.author }} </p>
+    <p>ISBN: {{ book.isbn_number }} </p>
+    <p> {{ book.description }} </p>
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+            <li> {{ reviews.username }}: {{ review.comment }} </li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_reviews' book.isbn_number %}">Add a review</a>
+    {% endif %}
+{% endblock %}

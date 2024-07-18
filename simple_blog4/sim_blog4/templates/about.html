@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to our website! We are a team dedicated to providing quality content and services to our users. Our mission is to deliver exceptional experiences through our products and build a community around them.
+        </p>
+        <p>
+            Our team consists of passionate professionals from various fields, all working together to achieve our goals. We believe in innovation, creativity, and the power of technology to change the world.
+        </p>
+        <p>
+            Thank you for visiting our site. We hope you find what you're looking for and more. If you have any questions or feedback, please don't hesitate to contact us.
+        </p>
+        <p>
+            Stay connected!
+        </p>
+    </div>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+
+</body>
+</html>

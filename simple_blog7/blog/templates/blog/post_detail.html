@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2> {{ post.title }} </h2>
+    <p> by {{post.author.username}} </p>
+    <p> {{post.content}} </p>
+    <h3> Comments </h3>
+
+    <div>
+        {% for comment in post.comments.all %}
+        <p> <strong> {{ comment.author.username }} </strong> said {{ comment.content}} </p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'add_comment' post.id %}" class="btn btn-primary">Add Comment</a>
+    <hr>
+    <a href="{% url 'post_edit' post.id %}" class="btn btn-info">Edit Post</a>
+    <a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Delete Post</a>
+{% endblock %}

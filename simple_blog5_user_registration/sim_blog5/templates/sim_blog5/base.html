@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Site Name{% endblock %}</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <!-- CSRF Token for Django forms -->
+    {% csrf_token %}
+    <!-- Stylesheets -->
+    <!-- Place your stylesheet links here -->
+    {% block stylesheet %}{% endblock %}
+    <!-- Head Scripts -->
+    <!-- Optional scripts to be loaded in the head -->
+    {% block headscript %}{% endblock %}
+</head>
+<body>
+    <header>
+        <!-- Header Content -->
+        <!-- {% block header %} -->
+        <nav>
+            <ul>
+                <li><a href="{% url 'register' %}">register</a></li>                
+                <li><a href="{#% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{#% url 'site_content' %}">Site Content</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <!-- {% endblock %} -->
+    </header>
+    
+    <main>
+        <!-- Main Content Area -->
+        {% block content %}{% endblock %}
+    </main>
+    
+    <aside>
+        <!-- Sidebar -->
+        {% block sidebar %}{% endblock %}
+    </aside>
+    
+    <footer>
+        <!-- Footer Content -->
+        {% block footer %}{% endblock %}
+    </footer>
+    
+    <!-- JavaScript Files -->
+    {% block javascript %}{% endblock %}
+</body>
+</html>

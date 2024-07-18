@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div>
+        <h1>Welcome to the Bookstore</h1>
+        <p>Discover a wide variety of book from all genres. Wherher uou are looking for the latest bestsellers or timeless classics, we have something for every book lover</p>
+        <p><a href="{% url 'book_list' %}">Browse our collections</a> to find your next read</p>
+    </div>
+{% endblock %}

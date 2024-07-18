@@ -1,0 +1,20 @@
+{% extends 'showcase2/base.html' %}
+
+{% block contect %}
+
+    <h2>Welcome to My Portfolio</h2>
+    <p>I am a passionate developer with experience with rust and python</p>
+    <h3>Projects</h3>
+    <div class="Projects">
+        {% for project in projects %}
+            <div class="project-card">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                <h3>{{ project.title }} </h3>
+                <p>{{ projecdt.description}} </p>
+                {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank">View Project</a>
+                {% endif %}
+            </div>
+        {% endfor%}
+    </div>
+{% endblock %}

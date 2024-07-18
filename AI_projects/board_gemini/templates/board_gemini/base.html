@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Local Community Board
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Local Community Board
+            </h1>
+        </header>
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'create_post' %}">Create Post</a>
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

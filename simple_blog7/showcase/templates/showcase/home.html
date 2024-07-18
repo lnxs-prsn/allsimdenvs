@@ -1,0 +1,20 @@
+{% extends 'showcase/base.html' %}
+
+
+{% block contect %}
+<h1>My Projects</h1>
+<div class="projects">
+    {% for project in projects %}
+    <div class="project">
+        <h2> {{ project.title }} </h2>
+        {% if project.image %}
+        <img src="{{ project.image.url }}" alt="{{ project.title }}", style="width: 100%;height: auto;">
+        {% endif %}
+        <p> {{ project.description }} </p>
+        {% if project.link %}
+        <a href="{{project.link}}">Learn more</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

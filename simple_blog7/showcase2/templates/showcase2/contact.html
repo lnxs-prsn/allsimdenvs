@@ -1,0 +1,16 @@
+{% extends 'showcase2/base.htlm' %}
+
+{% block content %}
+
+    <h2>Contact Me</h2>
+    <p>
+        Feel free to send me 
+        a message using the form below
+    </p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send Message</button>
+    </form>
+
+{% endblock %}

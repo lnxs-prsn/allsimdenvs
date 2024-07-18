@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Latest Post</h2>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_detail' post.pk %}"> {{post_title}} </a> (by {{ post.author.username }})
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
